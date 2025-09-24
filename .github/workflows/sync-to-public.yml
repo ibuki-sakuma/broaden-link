@@ -29,21 +29,24 @@ jobs:
         run: |
           set -eu
 
-          # コミット履歴を削除する場合
-          rm -rf publish
-          rsync -a --delete --exclude '.git' ./ ./publish/
+          # 公開リポジトリをshallow clone
+          git clone --depth 1 "https://ibuki-sakuma:${TARGET_REPO_PAT}@github.com/ibuki-sakuma/broaden-link.git" publish
+
+          # エクスポートした内容で作業ツリーを置き換え（.git は消さないよう除外）
+          rsync -a --delete --exclude '.git' ./export/ ./publish/
 
           cd publish
-          git init
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add -A
-          
-          git commit -m "Publish snapshot from commit ${GITHUB_SHA:0:7}..."
-          
-          git branch -M main
 
-          git remote add origin "https://ibuki-sakuma:${TARGET_REPO_PAT}@github.com/ibuki-sakuma/broaden-link.git"
-          git push origin main --force
+          # 変更がなければスキップ
+          if git diff --cached --quiet; then
+            echo "No changes to publish"
+            exit 0
+          fi
+
+          git commit -m "Publish snapshot from commit ${GITHUB_SHA:0:7}..."
+          git push origin HEAD:main
