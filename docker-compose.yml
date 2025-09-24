@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:13-alpine # 軽量なPostgreSQLイメージを使用
+    container_name: bookmark-manager-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432" # ホストの5432ポートをコンテナの5432ポートにマッピング
+    volumes:
+      - db_data:/var/lib/postgresql/data # データを永続化するためのボリューム
+
+volumes:
+  db_data: # ボリュームの定義

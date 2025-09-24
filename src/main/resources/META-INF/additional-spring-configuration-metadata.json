@@ -1,0 +1,14 @@
+{
+    "properties": [
+        {
+            "name": "storage.local.directory",
+            "type": "java.lang.String",
+            "description": "アプリケーションがファビコンなどの静的ファイルをローカルファイルシステムに保存するディレクトリのパス。"
+        },
+        {
+            "name": "aws.cognito.user-pool-id",
+            "type": "java.lang.String",
+            "description": "CognitoユーザープールのID。"
+        }
+    ]
+}

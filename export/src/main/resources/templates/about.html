@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security6">
+<head th:replace="~{layout :: common_head('BroadenLink - 概要')}">
+</head>
+<body>
+    <div th:replace="~{layout :: navbar}"></div>
+    
+    <div class="container-fluid bg-light py-5 text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold mb-3">BroadenLink</h1>
+            <p class="text-muted">あなたの情報収集と知識の幅を広げるための、シンプルで強力なブックマーク管理サービス</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h3 class="text-center mb-4">- BroadenLinkの特長 -</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-bookmark-fill fs-4 text-feature-icon me-3"></i>
+                        <div class="mt-1">
+                            <h5 class="fw-bold mb-0">常に手元に、必要な情報を。</h5>
+                            <p class="text-muted mb-0">よく参照するWebサイトや重要な情報をブックマークとして登録し、いつでもすぐにアクセスできます。別ウィンドウで常に表示しておくことで、作業の邪魔にならず、必要な時にサッと情報を確認できる効率的な運用をサポートします。</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-eye-fill fs-4 text-feature-icon me-3"></i>
+                        <div class="mt-1">
+                            <h5 class="fw-bold mb-0">膨大な情報も、一目で把握。</h5>
+                            <p class="text-muted mb-0">登録した全てのブックマークをフラットなリストで閲覧できます。複雑な階層構造に悩まされることなく、必要な情報へ直感的にたどり着けます。</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-search fs-4 text-feature-icon me-3"></i>
+                        <div class="mt-1">
+                            <h5 class="fw-bold mb-0">瞬時に見つける、あなたの情報。</h5>
+                            <p class="text-muted mb-0">強力なタグ検索機能により、膨大なブックマークの中から目的の情報を一瞬で見つけ出すことができます。キーワード検索と組み合わせることで、さらに絞り込んだ検索も可能です。</p>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-start">
+                        <i class="bi bi-share-fill fs-4 text-feature-icon me-3"></i>
+                        <div class="mt-1">
+                            <h5 class="fw-bold mb-0">「よく使うサイト」を共有し、新たな発見を。</h5>
+                            <p class="text-muted mb-1">特定の記事ではなく、「Google検索」や「YouTube」のような、日常的に利用するWebサイトをブックマークとしてまとめる用途に最適です。さらに、他のユーザーが「よく使うサイト」として登録しているブックマークをランキング形式で発見できます。これにより、あなたの知らない便利なサイトや、世の中で注目されている情報源を見つけ、知識の幅を広げることができます。</p>
+                            <small class="text-danger">※2人以上のユーザーが登録しているブックマーク(URL)を対象に集計しています。</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="text-center mt-5 mb-4">- こんな方におすすめ -</h3>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-lightbulb-fill fs-4 text-recommend-icon me-3"></i>
+                        <p class="mb-0">情報収集の効率を上げたい方</p>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-folder-fill fs-4 text-recommend-icon me-3"></i>
+                        <p class="mb-0">よく使うWebサイトを整理したい方</p>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-compass-fill fs-4 text-recommend-icon me-3"></i>
+                        <p class="mb-0">新しい情報源や便利なサイトを発見したい方</p>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-star-fill fs-4 text-recommend-icon me-3"></i>
+                        <p class="mb-0">シンプルで使いやすいブックマーク管理ツールをお探しの方</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="mt-5 mb-5 text-center lead">BroadenLinkで、あなたの情報収集をより豊かに、そして知識の幅を広げましょう。</p>
+    </div>
+    <div th:replace="~{layout :: footer}"></div>
+    <div th:replace="~{fragments/delete_account_modal :: delete_account_modal}"></div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

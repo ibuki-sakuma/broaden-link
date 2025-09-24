@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose.yml
+
+# Maven
+target/
+
+# IDE
+.vscode/
+
+# Local data
+data/
+
+# Secrets and environment variables
+.env
+
+# Documents
+README.md
+GEMINI.md

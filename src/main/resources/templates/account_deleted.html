@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: common_head('アカウント削除完了')}">
+</head>
+<body>
+    <div th:replace="~{layout :: navbar}"></div>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card login-card">
+                    <div class="card-header text-center">
+                        <h2 class="card-title">アカウント削除完了</h2>
+                    </div>
+                    <div class="card-body">
+                        <div th:if="${accountDeleted}" class="alert alert-success text-center" role="alert" th:text="${accountDeleted}">
+                            アカウントが正常に削除されました。
+                        </div>
+                        <div th:if="${accountDeleted}">
+                            <p class="text-center mb-3 text-muted">
+                                BroadenLinkをご利用いただき、誠にありがとうございました。<br>またのご利用を心よりお待ちしております。
+                            </p>
+                        </div>
+                        <div th:if="${error}" class="alert alert-danger text-center" role="alert" th:text="${error}">
+                            アカウントの削除中にエラーが発生しました。
+                        </div>
+                        <div th:if="${error}">
+                            <p class="text-center mb-3">
+                                ご迷惑をおかけして申し訳ございません。<br>
+                                お手数ですが、再度お試しください。<br>
+                            </p>
+                        </div>
+                        <div class="mt-4 mb-4" style="max-width: 200px; margin-left: auto; margin-right: auto;">
+                            <a th:href="@{/login}" class="btn btn-primary btn-login-round w-100">ログインページへ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="~{layout :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

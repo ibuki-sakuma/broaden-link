@@ -1,0 +1,41 @@
+<div th:fragment="add_bookmark_from_broaden_modal" class="modal fade" id="addBookmarkFromBroadenModal" tabindex="-1" aria-labelledby="addBookmarkFromBroadenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-processing-overlay"></div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="addBookmarkFromBroadenModalLabel">ブックマーク追加</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-2">
+                <form action="/add-from-broaden" method="post" th:object="${bookmark != null ? bookmark : new com.hukisanagi.springboot_bookmark_manager.model.Bookmark()}" id="addFromBroadenForm">
+                    <div th:if="${error}" class="alert alert-danger py-1" role="alert">
+                        <p th:text="${error}" class="my-0"></p>
+                    </div>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                    <div class="mb-2">
+                        <label for="modalUrl" class="form-label mb-1 fw-bold">URL<span class="text-danger">*</span></label>
+                        <input type="url" id="modalUrl" name="url" class="form-control form-control-sm" placeholder="https://example.com" required readonly th:value="${bookmark != null ? bookmark.url : ''}">
+                    </div>
+                    <div class="mb-2">
+                        <label for="modalTitle" class="form-label mb-1 fw-bold">タイトル<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <input type="text" id="modalTitle" name="title" class="form-control form-control-sm" placeholder="ブックマークのタイトル" required th:value="${bookmark != null ? bookmark.title : ''}">
+                            <button class="btn btn-outline-secondary btn-sm" type="button" id="fetchModalTitleBtn" title="タイトルを再取得"><i class="bi bi-arrow-clockwise"></i></button>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label mb-1 fw-bold">タグ:</label>
+                        <div id="modalTagsContainer" class="d-flex flex-wrap mb-1">
+                            <!-- Tags will be added here dynamically -->
+                        </div>
+                        <input type="text" id="modalTagInput" class="form-control form-control-sm" placeholder="タグを入力してEnter">
+                        <input type="hidden" id="modalTagsInput" name="tagsInput" th:value="${tagsInput != null ? tagsInput : ''}"> <!-- Hidden field for backend -->
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-sm btn-modal-primary me-0" form="addFromBroadenForm">追加</button>
+            </div>
+        </div>
+    </div>
+</div>

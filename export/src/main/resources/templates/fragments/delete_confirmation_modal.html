@@ -1,0 +1,20 @@
+<div th:fragment="delete_confirmation_modal" class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-processing-overlay"></div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmationModalLabel">選択したブックマークを削除</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body py-2 text-center">
+                <p class="my-3 form-label fw-bold">選択したブックマークを本当に削除しますか？</p>
+                <p class="my-3 form-label text-muted"><strong id="selectedBookmarkCount"></strong>件のブックマークを選択</p>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">キャンセル</button>
+                <button type="submit" class="btn btn-danger btn-sm btn-modal-primary me-0" form="batchDeleteForm">削除</button>
+            </div>
+        </div>
+    </div>
+</div>
