@@ -17,10 +17,10 @@ BroadenLinkは、Web上の情報を効率的に管理し、新たな知識を発
 ユーザーが求める情報へ即座にアクセスできる「フラットな操作感」を重視し、タグやお気に入り機能による素早い検索・整理を可能にしています。
 また、他のユーザーがブックマークしている人気サイトを探索することで、個人の知見を広げ、情報収集の幅を拡大することを支援します。
 
-<!-- [![Service Status](https://img.shields.io/badge/Service-Stopped-red)]() -->
-[![Service Status](https://img.shields.io/badge/Service-Running-brightgreen)]()
+<!-- [![Service Status](https://img.shields.io/badge/Service-Running-brightgreen)]() -->
+[![Service Status](https://img.shields.io/badge/Service-Stopped-red)]()
 <br>
-👉アプリケーションを試す: [https://broadenlink.com/about](https://broadenlink.com/about)
+👉アプリケーションを試す: [https://broadenlink.com/about](https://broadenlink.com/about) ※現在、運用を一時停止しています
 
 ### 主な特徴
 * **ブックマークの登録と編集**:
